@@ -20,7 +20,7 @@ function App() {
           <Route exact path="/signup">
             <Signup />
           </Route>
-          <Route exact path="/student">
+          <Route exact path="/students">
             <Student />
           </Route>
         </Switch>

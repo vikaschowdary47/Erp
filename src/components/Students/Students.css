@@ -1,4 +1,7 @@
 /* for Head.js */
+.student {
+  display: flex;
+}
 .student__head {
   width: 100%;
   display: flex;
