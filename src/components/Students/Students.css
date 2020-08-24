@@ -1,0 +1,22 @@
+/* for Head.js */
+.student__head {
+  width: 100%;
+  display: flex;
+}
+.head__body {
+  display: flex;
+  width: 95%;
+  margin: 5px auto;
+}
+.name {
+  display: flex;
+  float: right;
+  margin-left: auto;
+}
+.person {
+  display: flex;
+}
+.notication {
+  margin-right: 15px;
+}
+/* for Head.js */
