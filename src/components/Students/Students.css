@@ -2,6 +2,7 @@
 .student__head {
   width: 100%;
   display: flex;
+  border-bottom: 1px solid lightgrey;
 }
 .head__body {
   display: flex;

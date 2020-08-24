@@ -1,3 +1,13 @@
 .sidebar {
   width: 35%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar__body {
+  border-right: 1px solid lightgrey;
+  height: 100vh;
+}
+a {
+  color: white;
 }
