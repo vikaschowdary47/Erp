@@ -1,0 +1,22 @@
+.login__body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+}
+.card input {
+  width: 90%;
+  height: 40px;
+  margin-bottom: 3px;
+}
+.card input:last-child {
+  margin-bottom: 10px;
+}
+.card button {
+  margin-top: 15px;
+}
