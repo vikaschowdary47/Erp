@@ -18,7 +18,7 @@ const Signup = () => {
               placeholder="Password"
               name="password"
             ></input>
-            <button class="btn btn-block btn-primary">SignUp</button>
+            <button className="btn btn-block btn-primary">SignUp</button>
           </from>
         </div>
       </div>

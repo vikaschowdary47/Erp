@@ -14,9 +14,32 @@
   height: 40px;
   margin-bottom: 3px;
 }
+label {
+  margin-bottom: 5px;
+  height: 22px;
+  width: 100%;
+}
+input {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #777;
+}
+
 .card input:last-child {
   margin-bottom: 10px;
 }
 .card button {
   margin-top: 15px;
+}
+input.error {
+  border-color: red;
+}
+
+.input-feedback {
+  color: rgb(235, 54, 54);
+  /* margin-top: -15px; */
+  font-size: 16px;
+  font-family: bold;
+  margin-bottom: -10px;
 }
