@@ -8,10 +8,25 @@ const StudentTable = () => {
   const [school, setSchool] = useState("");
   const [classNum, setClassNum] = useState("");
   const [division, setDivision] = useState("");
+  const [searchStudent, setSearchStudent] = useState("");
+  const search = {
+    name: name,
+    Age: age,
+    school: school,
+    class: classNum,
+    division: division,
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log(search);
+    setSearchStudent(search);
+    console.log(searchStudent);
+  };
   return (
     <div className="details">
       <div className="filter__fields">
-        <form>
+        <form onSubmit={onSubmit}>
           <div className="row mt-4">
             <div className="col">
               <input
@@ -97,7 +112,7 @@ const StudentTable = () => {
           </div>
         </form>
         <div className="main__table">
-          <StudentDetailsTable />
+          <StudentDetailsTable search={search} />
         </div>
       </div>
     </div>

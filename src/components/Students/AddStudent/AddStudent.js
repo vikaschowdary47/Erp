@@ -23,7 +23,7 @@ const AddStudent = () => {
       class: classNum,
       division: division,
       status: status,
-      id: "11",
+      id: 11,
     };
     setStudents((prevStudents) => [...prevStudents, student]);
     console.log(student);
