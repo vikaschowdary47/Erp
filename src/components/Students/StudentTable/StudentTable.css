@@ -5,3 +5,13 @@
   float: right;
   margin-right: auto;
 }
+form {
+  width: 98%;
+  margin: 0 auto;
+}
+datalist {
+  background-color: white;
+}
+#division {
+  background-color: white;
+}
