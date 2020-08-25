@@ -3,28 +3,31 @@ import Head from "./Head";
 import Sidebar from "./Sidebar/Sidebar";
 import StudentTable from "./StudentTable/StudentTable";
 import AddStudent from "./AddStudent/AddStudent";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
+import { StudentProvider } from "./StudentContext";
 import "./Students.css";
 
 const Students = () => {
   return (
-    <Router>
-      <div>
-        <Head />
-        <div className="student">
+    // <Router>
+    <div>
+      <Head />
+      <div className="student">
+        <StudentProvider>
           <Sidebar />
           <Switch>
-            <Route exact to="/students">
+            <Route exact path="/students">
               <StudentTable />
             </Route>
-            <Route exact to="/students/add">
+            <Route exact path="/students/add">
               <AddStudent />
             </Route>
-            <div className="Student__body"></div>
+            {/* <div className="Student__body"></div> */}
           </Switch>
-        </div>
+        </StudentProvider>
       </div>
-    </Router>
+    </div>
+    // </Router>
   );
 };
 

@@ -1,4 +1,14 @@
-/* .addstudent__body {
-  flex: 6.5;
-  width: 65%;
-} */
+.addstudent {
+  flex: 10;
+  /* width: 65%; */
+}
+.addstudent__body {
+  width: 95%;
+  margin: auto;
+}
+.addstudent__body h3 {
+  border-bottom: 1px solid lightgrey;
+}
+.radios {
+  display: flex;
+}

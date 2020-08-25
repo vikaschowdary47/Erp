@@ -1,9 +1,11 @@
+.details {
+  flex: 10;
+}
 .filter__fields {
-  flex: 7.5;
   /* width: 50%; */
   height: 100vh;
   float: right;
-  margin-right: auto;
+  margin-left: auto;
 }
 form {
   width: 98%;
@@ -14,4 +16,8 @@ datalist {
 }
 #division {
   background-color: white;
+}
+.main__table {
+  width: 97%;
+  margin: auto;
 }

@@ -13,6 +13,7 @@ const Login = () => (
     onSubmit={(values, { setSubmitting }) => {
       setTimeout(() => {
         console.log("Logging in", values);
+        window.location.href = "/students";
         setSubmitting(false);
       }, 500);
     }}

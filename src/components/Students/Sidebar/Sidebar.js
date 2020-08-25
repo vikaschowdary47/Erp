@@ -7,19 +7,19 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="sidebar__body">
         <h3>Students</h3>
-        <ul class="list-group">
-          <li class="list-group-item list-group-item-secondary active">
+        <ul className="list-group">
+          <li className="list-group-item list-group-item-secondary active">
             - <Link to="/students">View Students</Link>
           </li>
-          <li class="list-group-item list-group-item-dark">
+          <li className="list-group-item list-group-item-dark">
             - <Link to="/students/add">Add Student</Link>
           </li>
-          <li class="list-group-item"></li>
-          <li class="list-group-item"></li>
-          <li class="list-group-item"></li>
-          <li class="list-group-item"></li>
-          <li class="list-group-item"></li>
-          <li class="list-group-item"></li>
+          <li className="list-group-item"></li>
+          <li className="list-group-item"></li>
+          <li className="list-group-item"></li>
+          <li className="list-group-item"></li>
+          <li className="list-group-item"></li>
+          <li className="list-group-item"></li>
         </ul>
       </div>
     </div>
