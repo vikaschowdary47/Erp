@@ -3,7 +3,7 @@ import "./AddStudent.css";
 
 const AddStudent = () => {
   return (
-    <div>
+    <div className="addstudent__body">
       <form>
         <div class="row mb-3">
           <label for="name" class="col-sm-2 col-form-label">
