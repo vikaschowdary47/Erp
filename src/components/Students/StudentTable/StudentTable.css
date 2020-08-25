@@ -21,3 +21,9 @@ datalist {
   width: 97%;
   margin: auto;
 }
+tbody a {
+  color: blue;
+}
+.danger {
+  color: red;
+}

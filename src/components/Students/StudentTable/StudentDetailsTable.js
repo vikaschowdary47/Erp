@@ -15,6 +15,7 @@ const StudentDetailsTable = () => {
             <th scope="col">Class</th>
             <th scope="col">Division</th>
             <th scope="col">Status</th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
@@ -27,6 +28,12 @@ const StudentDetailsTable = () => {
               <td>{student.class}</td>
               <td>{student.division}</td>
               <td>{student.status}</td>
+              <td>
+                <a href="##">EDIT</a>{" "}
+                <a href="##" className="danger">
+                  DELETE
+                </a>
+              </td>
             </tr>
           ))}
         </tbody>
