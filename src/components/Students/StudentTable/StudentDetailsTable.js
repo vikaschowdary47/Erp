@@ -4,13 +4,15 @@ import { StudentContext } from "../StudentContext";
 const StudentDetailsTable = ({ search }) => {
   const [students, setStudents] = useContext(StudentContext);
 
-  console.log(search);
+  // console.log(search);
   let filteredStudents = students.filter((student) => {
-    return student.name.toLowerCase().includes(search.name.toLowerCase());
-    // student.Age.includes(search.Age) ||
-    // student.school.toLowerCase().includes(search.school.toLowerCase())
-    // student.class.toLowerCase().includes(search.class.toLowerCase()) ||
-    // student.division.toLowerCase().includes(search.division.toLowerCase())
+    return (
+      student.name.toLowerCase().includes(search.name.toLowerCase()) &&
+      student.Age.includes(search.Age) &&
+      student.school.toLowerCase().includes(search.school.toLowerCase()) &&
+      student.class.toLowerCase().includes(search.class.toLowerCase()) &&
+      student.division.toLowerCase().includes(search.division.toLowerCase())
+    );
   });
   return (
     <div>
