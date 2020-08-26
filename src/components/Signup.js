@@ -5,10 +5,8 @@ import * as Yup from "yup";
 const Signup = () => (
   <Formik
     initialValues={{ email: "", password: "" }}
-    // onSubmit={(values, { setSubmitting }) => {
     onSubmit={(values, { setSubmitting }) => {
       setTimeout(() => {
-        // console.log("Logging in", values);
         window.location.href = "/login";
         setSubmitting(false);
       }, 500);
@@ -16,9 +14,6 @@ const Signup = () => (
     validationSchema={Yup.object().shape({
       email: Yup.string().email().required("Required"),
       password: Yup.string().min(6).required("Required"),
-      // confirmPassword: Yup.string()
-      //   .oneOf([Yup.ref("password"), ""], "passwords must match")
-      //   .required("Required"),
     })}
   >
     {(props) => {
@@ -67,23 +62,7 @@ const Signup = () => (
                 {errors.password && touched.password && (
                   <div className="input-feedback">{errors.password}</div>
                 )}
-                {/* <br />
-                <label htmlFor="confirmpassword">Confirm Password</label>
-                <br />
-                <input
-                  type="password"
-                  placeholder="Confirm Password"
-                  name="confirmpassword"
-                  value={values.confirmPassword}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={
-                    errors.confirmPassword && touched.confirmPassword && "error"
-                  }
-                />
-                {errors.confirmPassword && touched.confirmPassword && (
-                  <div className="input-feedback">{errors.confirmPassword}</div>
-                )} */}
+
                 <button
                   className="btn btn-block btn-primary"
                   type="submit"

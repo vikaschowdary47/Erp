@@ -4,9 +4,6 @@ import * as Yup from "yup";
 import "./Login.css";
 
 const Login = () => (
-  // const [email, setEmail] = React.useState("");
-  // const [password, setPassword] = React.useState("");
-
   <Formik
     initialValues={{ email: "", password: "" }}
     // onSubmit={(values, { setSubmitting }) => {

@@ -4,7 +4,6 @@ import { StudentContext } from "../StudentContext";
 const StudentDetailsTable = ({ search }) => {
   const [students, setStudents] = useContext(StudentContext);
 
-  // console.log(search);
   let filteredStudents = students.filter((student) => {
     return (
       student.name.toLowerCase().includes(search.name.toLowerCase()) &&

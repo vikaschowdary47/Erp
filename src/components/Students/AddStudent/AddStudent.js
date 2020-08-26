@@ -7,7 +7,6 @@ import { StudentContext } from "../StudentContext";
 const AddStudent = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [name, setName] = useState("");
-  // const [age, setAge] = useState("");
   const [school, setSchool] = useState("");
   const [classNum, setClassNum] = useState("");
   const [division, setDivision] = useState("");
@@ -63,14 +62,11 @@ const AddStudent = () => {
                 className="text-center"
               />
             </div>
-            {/* button */}
             <div className="row mb-3">
               <label htmlFor="name" className="col-sm-2 col-form-label">
                 School
               </label>
               <div className="col-sm-5">
-                {/* <input type="text" className="form-control" id="name" /> */}
-                {/* <div class="col"> */}
                 <input
                   type="text"
                   name="inst"
@@ -86,7 +82,6 @@ const AddStudent = () => {
                   <option value="Sri Chaitanya" />
                   <option value="Narayana" />
                 </datalist>
-                {/* </div> */}
               </div>
             </div>
             <div className="row mb-3">
