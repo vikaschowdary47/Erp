@@ -14,8 +14,8 @@ const StudentDetailsTable = ({ search }) => {
     );
   });
   return (
-    <div>
-      <table className="table table-striped">
+    <div style={{ overflowX: "auto" }} className="table-responsive">
+      <table className="table table-striped table-bordered">
         <thead>
           <tr>
             <th scope="col">ID</th>

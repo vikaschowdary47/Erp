@@ -34,7 +34,7 @@ const AddStudent = () => {
         <h3 className="mb-5">Add Student</h3>
         <form onSubmit={onSubmit}>
           <div className="row mb-3">
-            <label htmlFor="name" className="col-sm-2 col-form-label">
+            <label htmlFor="name" className="col-sm-2 col-form-label mb-2">
               Full Name
             </label>
             <div className="col-sm-5">
@@ -48,7 +48,7 @@ const AddStudent = () => {
             </div>
           </div>
           <div className="row mb-3">
-            <label htmlFor="name" className="col-sm-2 col-form-label">
+            <label htmlFor="name" className="col-sm-2 col-form-label mb-2">
               Date of Birth
             </label>
             <div className="col-sm-8">
@@ -63,7 +63,7 @@ const AddStudent = () => {
               />
             </div>
             <div className="row mb-3">
-              <label htmlFor="name" className="col-sm-2 col-form-label">
+              <label htmlFor="name" className="col-sm-2 col-form-label mb-2">
                 School
               </label>
               <div className="col-sm-5">
@@ -85,7 +85,7 @@ const AddStudent = () => {
               </div>
             </div>
             <div className="row mb-3">
-              <label htmlFor="name" className="col-sm-2 col-form-label">
+              <label htmlFor="name" className="col-sm-2 col-form-label mb-2">
                 Class
               </label>
               <div className="col-sm-5">
@@ -113,7 +113,7 @@ const AddStudent = () => {
               </div>
             </div>
             <div className="row mb-3">
-              <label htmlFor="name" className="col-sm-2 col-form-label">
+              <label htmlFor="name" className="col-sm-2 col-form-label mb-2">
                 Division
               </label>
               <div className="col-sm-5">
