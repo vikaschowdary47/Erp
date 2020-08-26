@@ -7,7 +7,7 @@ const StudentDetailsTable = ({ search }) => {
   let filteredStudents = students.filter((student) => {
     return (
       student.name.toLowerCase().includes(search.name.toLowerCase()) &&
-      student.Age.includes(search.Age) &&
+      // student.Age.toLowerCase().includes(search.Age.toLowerCase()) &&
       student.school.toLowerCase().includes(search.school.toLowerCase()) &&
       student.class.toLowerCase().includes(search.class.toLowerCase()) &&
       student.division.toLowerCase().includes(search.division.toLowerCase())

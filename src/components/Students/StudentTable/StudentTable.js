@@ -19,9 +19,9 @@ const StudentTable = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(search);
+    // console.log(search);
     setSearchStudent(search);
-    console.log(searchStudent);
+    // console.log(searchStudent);
   };
   return (
     <div className="details">
