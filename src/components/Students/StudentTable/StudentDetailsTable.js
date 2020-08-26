@@ -1,8 +1,17 @@
 import React, { useContext } from "react";
 import { StudentContext } from "../StudentContext";
 
-const StudentDetailsTable = () => {
+const StudentDetailsTable = ({ search }) => {
   const [students, setStudents] = useContext(StudentContext);
+
+  console.log(search);
+  let filteredStudents = students.filter((student) => {
+    return student.name.toLowerCase().includes(search.name.toLowerCase());
+    // student.Age.includes(search.Age) ||
+    // student.school.toLowerCase().includes(search.school.toLowerCase())
+    // student.class.toLowerCase().includes(search.class.toLowerCase()) ||
+    // student.division.toLowerCase().includes(search.division.toLowerCase())
+  });
   return (
     <div>
       <table className="table table-striped">
@@ -19,9 +28,9 @@ const StudentDetailsTable = () => {
           </tr>
         </thead>
         <tbody>
-          {students.map((student) => (
-            <tr key={student.id}>
-              <th scope="row">{student.id}</th>
+          {filteredStudents.map((student, i) => (
+            <tr key={i}>
+              <th scope="row">{i}</th>
               <td>{student.name}</td>
               <td>{student.Age}</td>
               <td>{student.school}</td>
