@@ -9,7 +9,6 @@ import "./Students.css";
 
 const Students = () => {
   return (
-    // <Router>
     <div>
       <Head />
       <div className="student">
@@ -22,12 +21,10 @@ const Students = () => {
             <Route exact path="/students/add">
               <AddStudent />
             </Route>
-            {/* <div className="Student__body"></div> */}
           </Switch>
         </StudentProvider>
       </div>
     </div>
-    // </Router>
   );
 };
 
