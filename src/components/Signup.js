@@ -1,29 +1,103 @@
 import React from "react";
+import { Formik, Form } from "formik";
+import * as Yup from "yup";
 
-const Signup = () => {
-  return (
-    <div>
-      <div className="login__body">
-        <div className="card">
-          <h5 className="text-center mb-4">Create a new Account</h5>
-          <from>
-            <label htmlFor="email">Email</label>
-            <br />
-            <input type="email" placeholder="Email" name="email"></input>
-            <br />
-            <label htmlFor="password">Password</label>
-            <br />
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-            ></input>
-            <button className="btn btn-block btn-primary">SignUp</button>
-          </from>
+const Signup = () => (
+  <Formik
+    initialValues={{ email: "", password: "" }}
+    // onSubmit={(values, { setSubmitting }) => {
+    onSubmit={(values, { setSubmitting }) => {
+      setTimeout(() => {
+        // console.log("Logging in", values);
+        window.location.href = "/login";
+        setSubmitting(false);
+      }, 500);
+    }}
+    validationSchema={Yup.object().shape({
+      email: Yup.string().email().required("Required"),
+      password: Yup.string().min(6).required("Required"),
+      // confirmPassword: Yup.string()
+      //   .oneOf([Yup.ref("password"), ""], "passwords must match")
+      //   .required("Required"),
+    })}
+  >
+    {(props) => {
+      const {
+        values,
+        touched,
+        errors,
+        isSubmitting,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+      } = props;
+
+      return (
+        <div>
+          <div className="login__body">
+            <div className="card">
+              <h5 className="text-center mb-4">Create a new Account</h5>
+              <form onSubmit={handleSubmit}>
+                <label htmlFor="email">Email ID / Phone Number</label>
+                <br />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  value={values.email}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={errors.email && touched.email && "error"}
+                />
+                {errors.email && touched.email && (
+                  <div className="input-feedback">{errors.email}</div>
+                )}
+                <br />
+                <label htmlFor="password">Password</label>
+                <br />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  value={values.password}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={errors.password && touched.password && "error"}
+                />
+                {errors.password && touched.password && (
+                  <div className="input-feedback">{errors.password}</div>
+                )}
+                {/* <br />
+                <label htmlFor="confirmpassword">Confirm Password</label>
+                <br />
+                <input
+                  type="password"
+                  placeholder="Confirm Password"
+                  name="confirmpassword"
+                  value={values.confirmPassword}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={
+                    errors.confirmPassword && touched.confirmPassword && "error"
+                  }
+                />
+                {errors.confirmPassword && touched.confirmPassword && (
+                  <div className="input-feedback">{errors.confirmPassword}</div>
+                )} */}
+                <button
+                  className="btn btn-block btn-primary"
+                  type="submit"
+                  disabled={isSubmitting}
+                >
+                  SignUp
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  );
-};
+      );
+    }}
+  </Formik>
+);
 
 export default Signup;
