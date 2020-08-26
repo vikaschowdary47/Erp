@@ -6,7 +6,6 @@ import "./Login.css";
 const Login = () => (
   <Formik
     initialValues={{ email: "", password: "" }}
-    // onSubmit={(values, { setSubmitting }) => {
     onSubmit={(values, { setSubmitting }) => {
       setTimeout(() => {
         console.log("Logging in", values);
