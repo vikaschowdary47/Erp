@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { StudentContext } from "../StudentContext";
+import { Link } from "react-router-dom";
 
 const StudentDetailsTable = ({ search }) => {
   const [students, setStudents] = useContext(StudentContext);
+  // const [edit, setEdit] = React.useState(false);
 
   let filteredStudents = students.filter((student) => {
     return (
@@ -13,9 +15,6 @@ const StudentDetailsTable = ({ search }) => {
       student.division.toLowerCase().includes(search.division.toLowerCase())
     );
   });
-
-  // const onDelete = (students) => {
-  // };
 
   return (
     <div style={{ overflowX: "auto" }} className="table-responsive">
@@ -43,15 +42,27 @@ const StudentDetailsTable = ({ search }) => {
               <td>{student.division}</td>
               <td>{student.status}</td>
               <td>
-                <a href="##">EDIT</a>{" "}
+                <a
+                  href={`/students/edit/${i + 1}`}
+                  // onClick={() => {
+                  //   setEdit(true);
+                  // }}
+                >
+                  EDIT
+                </a>
+                /
                 <a
                   href="##"
                   className="danger"
                   onClick={() => {
+                    alert(
+                      `Are you sure you want to remove ${student.name} from ${student.school}?`
+                    );
                     const num = students.findIndex(
                       (stud) => stud.school === student.school
                     );
-                    console.log(num);
+                    filteredStudents.splice(num, 1);
+                    setStudents(filteredStudents);
                   }}
                 >
                   DELETE

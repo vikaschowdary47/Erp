@@ -44,6 +44,12 @@ const AddStudent = () => {
       Age: age,
     };
     setStudents((prevStudents) => [...prevStudents, student]);
+    setName("");
+    setSelectedDate(new Date());
+    setClassNum("");
+    setDivision("");
+    setSchool("");
+    setStatus("");
   };
 
   return (
@@ -95,7 +101,7 @@ const AddStudent = () => {
                   onChange={(e) => setSchool(e.target.value)}
                 />
                 <datalist id="institution">
-                  <option value="Schoolool Karmala" />
+                  <option value="LEAD School Karmala" />
                   <option value="KKR" />
                   <option value="Sri Chaitanya" />
                   <option value="Narayana" />

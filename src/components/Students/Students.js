@@ -21,6 +21,9 @@ const Students = () => {
             <Route exact path="/students/add">
               <AddStudent />
             </Route>
+            <Route exact path="/students/edit/:id">
+              <AddStudent />
+            </Route>
           </Switch>
         </StudentProvider>
       </div>
