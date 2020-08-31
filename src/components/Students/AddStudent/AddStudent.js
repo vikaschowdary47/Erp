@@ -1,10 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./AddStudent.css";
 import { StudentContext } from "../StudentContext";
+import { useParams } from "react-router-dom";
 
-const AddStudent = () => {
+const AddStudent = (props) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [name, setName] = useState("");
   const [school, setSchool] = useState("");
@@ -12,6 +13,18 @@ const AddStudent = () => {
   const [division, setDivision] = useState("");
   const [status, setStatus] = useState("");
   const [students, setStudents] = useContext(StudentContext);
+
+  const [editStudent, setEditStudent] = useState(null);
+  const id = useParams();
+
+  useEffect(() => {
+    setEditStudent(students.filter((student) => student.id === `${id.id}`));
+    console.log(`${id.id}`);
+  }, [id]);
+
+  console.log(id.id);
+
+  console.log(editStudent);
 
   const month = getMonthFromString(selectedDate.toDateString().substr(4, 3));
   const year = selectedDate.toDateString().substr(11, 4);

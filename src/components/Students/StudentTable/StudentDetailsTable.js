@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
 import { StudentContext } from "../StudentContext";
-import { Link } from "react-router-dom";
 
 const StudentDetailsTable = ({ search }) => {
   const [students, setStudents] = useContext(StudentContext);
-  // const [edit, setEdit] = React.useState(false);
 
   let filteredStudents = students.filter((student) => {
     return (
@@ -42,15 +40,7 @@ const StudentDetailsTable = ({ search }) => {
               <td>{student.division}</td>
               <td>{student.status}</td>
               <td>
-                <a
-                  href={`/students/edit/${i + 1}`}
-                  // onClick={() => {
-                  //   setEdit(true);
-                  // }}
-                >
-                  EDIT
-                </a>
-                /
+                <a href={`/students/edit/${i + 1}`}>EDIT</a>/
                 <a
                   href="##"
                   className="danger"
