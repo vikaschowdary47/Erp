@@ -13,6 +13,25 @@ const AddStudent = () => {
   const [status, setStatus] = useState("");
   const [students, setStudents] = useContext(StudentContext);
 
+  const month = getMonthFromString(selectedDate.toDateString().substr(4, 3));
+  const year = selectedDate.toDateString().substr(11, 4);
+
+  function calculate_age(dob) {
+    var diff_ms = Date.now() - dob.getTime();
+    var age_dt = new Date(diff_ms);
+
+    return Math.abs(age_dt.getUTCFullYear() - 1970);
+  }
+  const age = calculate_age(new Date(year, month)).toString();
+
+  function getMonthFromString(mon) {
+    var d = Date.parse(mon + "1, 2012");
+    if (!isNaN(d)) {
+      return new Date(d).getMonth() + 1;
+    }
+    return -1;
+  }
+
   const onSubmit = (e) => {
     e.preventDefault();
     const student = {
@@ -22,10 +41,9 @@ const AddStudent = () => {
       class: classNum,
       division: division,
       status: status,
-      // id: 11,
+      Age: age,
     };
     setStudents((prevStudents) => [...prevStudents, student]);
-    // console.log(student);
   };
 
   return (

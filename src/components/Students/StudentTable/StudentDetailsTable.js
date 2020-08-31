@@ -7,12 +7,16 @@ const StudentDetailsTable = ({ search }) => {
   let filteredStudents = students.filter((student) => {
     return (
       student.name.toLowerCase().includes(search.name.toLowerCase()) &&
-      // student.Age.toLowerCase().includes(search.Age.toLowerCase()) &&
+      student.Age.includes(search.Age) &&
       student.school.toLowerCase().includes(search.school.toLowerCase()) &&
       student.class.toLowerCase().includes(search.class.toLowerCase()) &&
       student.division.toLowerCase().includes(search.division.toLowerCase())
     );
   });
+
+  // const onDelete = (students) => {
+  // };
+
   return (
     <div style={{ overflowX: "auto" }} className="table-responsive">
       <table className="table table-striped table-bordered">
@@ -40,7 +44,16 @@ const StudentDetailsTable = ({ search }) => {
               <td>{student.status}</td>
               <td>
                 <a href="##">EDIT</a>{" "}
-                <a href="##" className="danger">
+                <a
+                  href="##"
+                  className="danger"
+                  onClick={() => {
+                    const num = students.findIndex(
+                      (stud) => stud.school === student.school
+                    );
+                    console.log(num);
+                  }}
+                >
                   DELETE
                 </a>
               </td>
