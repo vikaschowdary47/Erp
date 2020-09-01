@@ -25,7 +25,6 @@ const AddStudent = (props) => {
 
   const onEdit = () => {
     setName(editStudent.name);
-    // setSelectedDate(editStudent.Dob);
     setClassNum(editStudent.classNum);
     setDivision(editStudent.division);
     setSchool(editStudent.school);
