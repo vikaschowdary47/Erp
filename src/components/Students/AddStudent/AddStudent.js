@@ -14,14 +14,23 @@ const AddStudent = (props) => {
   const [status, setStatus] = useState("");
   const [students, setStudents] = useContext(StudentContext);
 
-  const [editStudent, setEditStudent] = useState({});
+  const [editStudent, setEditStudent] = useState([]);
   const id = useParams();
   const num = Number(`${id.id}`);
   let nam = null;
 
   useEffect(() => {
     setEditStudent(students.filter((student) => student.id === num)[0]);
-  }, [id]);
+  }, [num]);
+
+  const onEdit = () => {
+    setName(editStudent.name);
+    // setSelectedDate(editStudent.Dob);
+    setClassNum(editStudent.classNum);
+    setDivision(editStudent.division);
+    setSchool(editStudent.school);
+    setStatus(editStudent.status);
+  };
 
   const month = getMonthFromString(selectedDate.toDateString().substr(4, 3));
   const year = selectedDate.toDateString().substr(11, 4);
@@ -66,6 +75,9 @@ const AddStudent = (props) => {
     <div className="addstudent mt-5">
       <div className="addstudent__body">
         <h3 className="mb-5">Add Student</h3>
+        <button className={num ? "btn btn-danger" : "d-none"} onClick={onEdit}>
+          Edit
+        </button>
         <form onSubmit={onSubmit}>
           <div className="row mb-3">
             <label htmlFor="name" className="col-sm-2 col-form-label mb-2">

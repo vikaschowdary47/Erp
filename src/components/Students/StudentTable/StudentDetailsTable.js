@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { StudentContext } from "../StudentContext";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 
 const StudentDetailsTable = ({ search }) => {
   const [students, setStudents] = useContext(StudentContext);
+  const [contenteditable, setContenteditable] = useState(false);
 
   let filteredStudents = students.filter((student) => {
     return (
@@ -41,7 +42,13 @@ const StudentDetailsTable = ({ search }) => {
               <td>{student.division}</td>
               <td>{student.status}</td>
               <td>
-                <a href={`/students/edit/${i + 1}`}>EDIT</a>/
+                <a
+                  href={`/students/edit/${i + 1}`}
+                  // onClick={() => setContenteditable(true)}
+                >
+                  EDIT
+                </a>
+                /
                 <a
                   href="##"
                   className="danger"
