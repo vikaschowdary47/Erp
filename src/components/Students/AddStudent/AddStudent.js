@@ -14,17 +14,14 @@ const AddStudent = (props) => {
   const [status, setStatus] = useState("");
   const [students, setStudents] = useContext(StudentContext);
 
-  const [editStudent, setEditStudent] = useState(null);
+  const [editStudent, setEditStudent] = useState({});
   const id = useParams();
+  const num = Number(`${id.id}`);
+  let nam = null;
 
   useEffect(() => {
-    setEditStudent(students.filter((student) => student.id === `${id.id}`));
-    console.log(`${id.id}`);
+    setEditStudent(students.filter((student) => student.id === num)[0]);
   }, [id]);
-
-  console.log(id.id);
-
-  console.log(editStudent);
 
   const month = getMonthFromString(selectedDate.toDateString().substr(4, 3));
   const year = selectedDate.toDateString().substr(11, 4);

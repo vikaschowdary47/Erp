@@ -5,7 +5,7 @@ export const StudentContext = createContext();
 export const StudentProvider = (props) => {
   const [students, setStudents] = useState([
     {
-      name: "Student Name",
+      name: "Sofia",
       Dob: "10/5/2010",
       Age: "10",
       school: "LEAD School Karmala",
@@ -15,7 +15,7 @@ export const StudentProvider = (props) => {
       status: "Active",
     },
     {
-      name: "Student Name",
+      name: "Mendez",
       Dob: "10/5/2010",
       Age: "10",
       school: "LEAD School Karmala",
@@ -25,7 +25,7 @@ export const StudentProvider = (props) => {
       status: "Active",
     },
     {
-      name: "Student Name",
+      name: "Arjun",
       Dob: "10/5/2010",
       Age: "12",
       school: "Narayana",
@@ -35,7 +35,7 @@ export const StudentProvider = (props) => {
       status: "Active",
     },
     {
-      name: "Student Name",
+      name: "Kiran",
       Dob: "10/5/2010",
       Age: "10",
       school: "LEAD School Karmala",
@@ -45,7 +45,7 @@ export const StudentProvider = (props) => {
       status: "Active",
     },
     {
-      name: "Student Name",
+      name: "Monica",
       Dob: "10/5/2010",
       Age: "12",
       school: "Narayana",
@@ -55,7 +55,7 @@ export const StudentProvider = (props) => {
       status: "Active",
     },
     {
-      name: "Student Name",
+      name: "Lilly",
       Dob: "10/5/2010",
       Age: "14",
       school: "LEAD School Karmala",
@@ -65,7 +65,7 @@ export const StudentProvider = (props) => {
       status: "Active",
     },
     {
-      name: "Student Name",
+      name: "Joseph",
       Dob: "10/5/2010",
       Age: "11",
       school: "Sri Chaitanya",
@@ -75,7 +75,7 @@ export const StudentProvider = (props) => {
       status: "Active",
     },
     {
-      name: "Student Name",
+      name: "Varun",
       Dob: "10/5/2010",
       Age: "15",
       school: "LEAD School Karmala",
@@ -85,7 +85,7 @@ export const StudentProvider = (props) => {
       status: "Active",
     },
     {
-      name: "Student Name",
+      name: "Raj",
       Dob: "10/5/2010",
       Age: "10",
       school: "Sri Chaitanya",
@@ -95,7 +95,7 @@ export const StudentProvider = (props) => {
       status: "Active",
     },
     {
-      name: "Student Name",
+      name: "Supriya",
       Dob: "10/5/2010",
       Age: "10",
       school: "KKR",

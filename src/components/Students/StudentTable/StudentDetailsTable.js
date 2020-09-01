@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { StudentContext } from "../StudentContext";
+import ReactHTMLTableToExcel from "react-html-table-to-excel";
 
 const StudentDetailsTable = ({ search }) => {
   const [students, setStudents] = useContext(StudentContext);
@@ -16,7 +17,7 @@ const StudentDetailsTable = ({ search }) => {
 
   return (
     <div style={{ overflowX: "auto" }} className="table-responsive">
-      <table className="table table-striped table-bordered">
+      <table className="table table-striped table-bordered" id="table-to-xls">
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -49,7 +50,7 @@ const StudentDetailsTable = ({ search }) => {
                       `Are you sure you want to remove ${student.name} from ${student.school}?`
                     );
                     const num = students.findIndex(
-                      (stud) => stud.school === student.school
+                      (stud) => stud.name === student.name
                     );
                     filteredStudents.splice(num, 1);
                     setStudents(filteredStudents);
@@ -62,6 +63,14 @@ const StudentDetailsTable = ({ search }) => {
           ))}
         </tbody>
       </table>
+      <ReactHTMLTableToExcel
+        id="test-table-xls-button"
+        className="download-table-xls-button"
+        table="table-to-xls"
+        filename="students"
+        sheet="students"
+        buttonText="Download Excel"
+      />
     </div>
   );
 };
